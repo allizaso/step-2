@@ -1,0 +1,4 @@
+======================================
+Service Principal DNS Lookup Report
+======================================
+✅ Has domain record:       google.com
