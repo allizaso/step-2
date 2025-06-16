@@ -45,16 +45,15 @@ if [ -f "$INPUT" ]; then
         DOMAINS+=("$LINE")
     done < "$INPUT"
 else
-    # Assume comma-separated list
-    # Remove spaces after commas to avoid issues like " domain.com"
-    CLEAN_INPUT=$(echo "$INPUT" | sed 's/, */,/g')
-    IFS=',' read -ra SPLIT <<< "$CLEAN_INPUT"
+    # Handle comma-separated list ("domain1.com, domain2.com")
+    IFS=',' read -ra SPLIT <<< "$INPUT"
     for ITEM in "${SPLIT[@]}"; do
-        ITEM=$(echo "$ITEM" | xargs)  # Trim any remaining whitespace
+        ITEM=$(echo "$ITEM" | xargs)  # Trim whitespace
         [[ -z "$ITEM" ]] && continue
         DOMAINS+=("$ITEM")
     done
 fi
+
 
 # Print DNS lookup for each domain
 echo "======================================"
