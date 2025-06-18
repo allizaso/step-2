@@ -196,3 +196,6 @@ tasks:
     * Experience with implementation of HIPAA, HITRUST, FISMA, or NIST security policies and related systems configurations
 
 * 3PM: Security Analyst Staff Zoom Meeting
+  * AbuseIPDB can be used to look up suspicious IP addresses
+  * [UDP Scanner](https://threatpicture.com/terms/udp-scan/) 
+  * 
